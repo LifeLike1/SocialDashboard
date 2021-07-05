@@ -119,12 +119,13 @@ label:active:after {
 .dashboard {
   padding-top: 2rem;
   margin-bottom: 1.75rem;
+  min-height: 15.625rem;
   -webkit-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out;
 }
 
 .dashboard--dark {
-  background-color: #1e202a;
+  background-color: #1f212e;
 }
 
 .dashboard--light {
@@ -196,6 +197,9 @@ label:active:after {
 
 .cards {
   margin-bottom: 1.25rem;
+  position: relative;
+  top: -6.25rem;
+  margin-bottom: -6.25rem;
 }
 
 @media (min-width: 23.4375em) {
@@ -229,6 +233,8 @@ label:active:after {
   position: relative;
   border-radius: 0.4rem;
   height: 15.625rem;
+  -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
   -webkit-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out;
 }
@@ -252,6 +258,10 @@ label:active:after {
 
 .cards .card--light {
   background-color: #f0f2fa;
+}
+
+.cards .card--light:hover {
+  background-color: #d6dbf0;
 }
 
 .cards .card:not(:last-child) {
@@ -409,6 +419,8 @@ label:active:after {
   -ms-grid-rows: (1fr)[2];
       grid-template-rows: repeat(2, 1fr);
   border-radius: 0.4rem;
+  -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
 }
 
 @media (min-width: 23.4375em) {
@@ -431,6 +443,10 @@ label:active:after {
 
 .overview__card--light {
   background-color: #f0f2fa;
+}
+
+.overview__card--light:hover {
+  background-color: #d6dbf0;
 }
 
 .overview__card:not(:last-child) {

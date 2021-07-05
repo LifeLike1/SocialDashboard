@@ -1,5 +1,8 @@
 .cards {
   margin-bottom: 1.25rem;
+  position: relative;
+  top: -6.25rem;
+  margin-bottom: -6.25rem;
   @include breakpoint-up(small) {
     display: grid;
     column-gap: 1rem;
@@ -16,6 +19,7 @@
     position: relative;
     border-radius: 0.4rem;
     height: 15.625rem;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
     transition: all 150ms ease-in-out;
     @include breakpoint-up(small) {
       height: 13.4375rem;
@@ -31,6 +35,9 @@
     }
     &--light {
       background-color: $lightGrayishBlue;
+      &:hover {
+        background-color: darken($lightGrayishBlue, 7%);
+      }
     }
     &:not(:last-child) {
       margin-bottom: 1.875rem;

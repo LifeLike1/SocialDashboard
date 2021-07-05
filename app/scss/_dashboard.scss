@@ -1,9 +1,10 @@
 .dashboard {
   padding-top: 2rem; // 55px
   margin-bottom: 1.75rem;
+  min-height: 15.625rem;
   transition: all 150ms ease-in-out;
   &--dark {
-    background-color: $veryDarkBlue;
+    background-color: $veryDarkBlueTop;
   }
   &--light {
     background-color: $lightGrayishBlue;
