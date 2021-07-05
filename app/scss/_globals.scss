@@ -1,0 +1,107 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  transition: all 150ms ease-in-out;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  transition: all 150ms ease-in-out;
+  &.dark {
+    background-color: $veryDarkBlue;
+  }
+  &.light {
+    background-color: $veryPaleBlueTop;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  color: $desaturatedBlue;
+  font-size: $font-sm;
+}
+
+.container {
+  max-width: 69.6875rem; // 1115px
+  margin: 0 auto;
+  padding-left: 2.0625rem; // 33px
+  padding-right: 2.0625rem; // 33px
+}
+
+// slider
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  transition: all 750ms ease-in-out;
+  transition-delay: 0;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: linear-gradient(to right, $darkToggleFrom, $darkToggleTo);
+  float: right;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: $lightToggle;
+}
+
+input:checked + label:hover {
+  background: linear-gradient(to right, $darkToggleFrom, $darkToggleTo);
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 45px;
+}
+
+.hide-for-mobile {
+  @include breakpoint-down(small) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}

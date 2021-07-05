@@ -1,0 +1,86 @@
+.overview {
+  &__content {
+    @include breakpoint-up(small) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15.0625rem, 1fr));
+      grid-template-rows: repeat(2, 1fr);
+      column-gap: 1.75rem;
+    }
+  }
+  &__title {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    &--dark {
+      color: $white;
+    }
+    &--light {
+      color: hsl(230, 17%, 14%);
+    }
+  }
+  &__card {
+    width: 100%;
+    height: 10.3125rem;
+    position: relative;
+    cursor: pointer;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    border-radius: 0.4rem;
+    @include breakpoint-up(small) {
+      height: 7.9375rem;
+      padding: 1.3rem;
+      justify-items: end;
+    }
+    &--dark {
+      background-color: $darkDesaturatedBlue;
+      transition: background-color 150ms ease-in-out;
+      &:hover {
+        background-color: lighten($darkDesaturatedBlue, 10%);
+      }
+    }
+    &--light {
+      background-color: $lightGrayishBlue;
+    }
+    &:not(:last-child) {
+      margin-bottom: 1.15rem;
+    }
+  }
+  &__views {
+    color: $desaturatedBlue;
+    font-size: 1.125rem;
+    font-weight: 700;
+    @include breakpoint-up(small) {
+      font-size: 0.85rem;
+      width: 100%;
+      display: flex;
+    }
+  }
+  &__count {
+    font-size: 2.125rem;
+    font-weight: 700;
+    @include breakpoint-up(small) {
+      font-size: 1.625rem;
+      width: 100%;
+      display: flex;
+    }
+    &--dark {
+      color: $white;
+    }
+  }
+  &__growth {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    img {
+      margin-right: 0.4rem;
+    }
+    &--up {
+      color: $limeGreen;
+    }
+    &--down {
+      color: $brightRed;
+    }
+  }
+}

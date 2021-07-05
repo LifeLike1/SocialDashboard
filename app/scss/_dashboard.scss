@@ -1,0 +1,47 @@
+.dashboard {
+  padding-top: 2rem; // 55px
+  margin-bottom: 1.75rem;
+  transition: all 150ms ease-in-out;
+  &--dark {
+    background-color: $veryDarkBlue;
+  }
+  &--light {
+    background-color: $lightGrayishBlue;
+  }
+  .container {
+    @include breakpoint-up(small) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__left {
+    padding-bottom: 2.125rem;
+    @include breakpoint-down(small) {
+      border-bottom: 1px solid $darkDesaturatedBlue;
+    }
+  }
+  &__right {
+    display: flex;
+    padding-top: 1.125rem;
+    @include breakpoint-up(small) {
+      justify-content: center;
+      align-items: center;
+      h3 {
+        margin-right: 0.6rem;
+      }
+    }
+    @include breakpoint-down(small) {
+      justify-content: space-between;
+    }
+  }
+  &__title {
+    font-weight: 700;
+    margin-bottom: 0.875rem;
+    &--dark {
+      color: $white;
+    }
+    &--light {
+      color: $veryDarkBlue;
+    }
+  }
+}
